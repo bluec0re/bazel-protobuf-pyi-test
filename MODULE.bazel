@@ -1,0 +1,10 @@
+bazel_dep(name = "protobuf", version = "27.1")
+
+single_version_override(
+    module_name = "protobuf",
+    version = "27.1",
+    patches = [
+        ":py_proto_library.bzl.patch",
+        ":build_targets.bzl.patch",
+    ],
+)
